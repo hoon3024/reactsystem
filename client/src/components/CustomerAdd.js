@@ -28,13 +28,7 @@ fileName: ''
 
 }
 
-this.handleFormSubmit = this.handleFormSubmit.bind(this)
 
-this.handleFileChange = this.handleFileChange.bind(this)
-
-this.handleValueChange = this.handleValueChange.bind(this)
-
-this.addCustomer = this.addCustomer.bind(this)
 
 }
 
@@ -69,15 +63,33 @@ fileName: e.target.value
 }
 
 
-handleValueChange(e) {
+handleFormSubmit(e) {
 
-let nextState = {};
-
-nextState[e.target.name] = e.target.value;
-
-this.setState(nextState);
-
-}
+    e.preventDefault() 
+    this.addCustomer()
+    
+    .then((response) => {
+    
+    console.log(response.data);
+    
+    })
+    
+    this.setState({
+    
+    file: null,
+    userName: '',
+    birthday: '',
+    gender: '',
+    job: '',
+    fileName: ''
+    })
+    
+    window.location.reload();
+    
+    }
+    
+    
+    
 
 
 

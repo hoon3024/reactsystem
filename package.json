@@ -7,8 +7,10 @@
         "dev": "concurrently --kill-others-on-fail \"yarn.cmd server\" \"yarn.cmd client\""
     },
     "dependencies": {
+        "@material-ui/core": "^4.0.0-rc.0",
         "body-parser": "^1.18.3",
         "express": "^4.16.4",
+        "multer": "^1.4.2",
         "mysql": "^2.17.1"
     },
     "devDependencies": {
